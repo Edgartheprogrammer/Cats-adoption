@@ -5,6 +5,7 @@ import './styles/App.css'
 import CatsSlider from './components/CatsSlider'
 import CatCard from './components/CatCard'
 import Button from './components/Button'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
   return (
     <div>
     
-      
+    <Footer/>
     </div>
   )
 }
