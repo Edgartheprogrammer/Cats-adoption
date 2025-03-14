@@ -5,13 +5,15 @@ const Footer = () => {
   return (
     <div className='footer-container'>
         <div className='footer-about'>
-            <ul>
-                <h2>About</h2>
-                <li>About us</li>
-                <li>FAQ</li>
-                <li>Privacy Policy</li>
-            </ul>
+        <h2>About</h2>
+        <p>About us</p>
+        <p>FAQ</p>
+        <p>Privacy Policy</p>
         </div>
+                
+        <div className='footer-social'>
+            <img src='./images/social-media.png' alt='social media'/>
+            </div>
     </div>
   )
 }

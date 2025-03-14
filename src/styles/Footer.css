@@ -1,7 +1,29 @@
-.footer.container {
+.footer-container {
     display: flex;
-    align-items: left;
+    justify-content: space-between;
+    align-items: center;
     background-color: #67BBBF;
+    width: 100%;
+    padding: 8px;
     
 }
+
+.footer-about h2 {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+
+}
+
+.footer-about P {
+    text-align: left;
+    font-size: 13px;
+    line-height: 0.7;
+}
+
+.footer-social img {
+    width: 100px;
+    height: auto;
+}
+
 
