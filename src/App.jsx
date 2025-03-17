@@ -1,19 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// App.jsx
+import React from 'react'
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage.jsx'
+import AdoptPage from './pages/AdoptPage.jsx'
+import InConstruction from './pages/InConstruction.jsx'
 import './styles/App.css'
-import CatsSlider from './components/CatsSlider'
-import CatCard from './components/CatCard'
-import Button from './components/Button'
-
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
     <div>
-    
-      
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/adopt" element={<AdoptPage />} />
+          <Route path="/contact" element={<InConstruction />} />
+        </Routes>
+      </main>
     </div>
   )
 }
