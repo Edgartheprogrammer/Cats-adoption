@@ -6,10 +6,12 @@ const Footer = () => {
   return (
     <div className={styles.footerContainer}>
         <div className={styles.footerAbout}>
-            <h2>About</h2>
-            <p>About us</p>
-            <p>FAQ</p>
-            <p>Privacy Policy</p>
+          
+            <a href='#'>About us</a>
+            <a href='#'>FAQ</a>
+            <a href='#'>Privacy Policy</a>
+            <a href='#'>Cookie preferences</a>
+            
         </div>
                 
         <div className={styles.footerSocial}>
