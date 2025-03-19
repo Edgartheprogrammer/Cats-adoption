@@ -3,7 +3,9 @@ import '../styles/CatsCard.module.css'
 
 const CatCard = () => {
   return (
-    <div>CatCard</div>
+    <div className="catCard">
+      <img src={image} alt={title} />
+    </div>
   )
 }
 
