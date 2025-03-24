@@ -8,7 +8,7 @@ const AllCatsPage = () => {
   return (
     <main className="allCatsPage-container">
       <p>AllCatsPage</p>
-      <CatsButton imageSrc={kittenIcon} buttonText="See All Meows" linkTo="/contact" />
+      <CatsButton imageSrc={kittenIcon} buttonText="See All Meows" linkTo="/adopt" />
     </main>
   )
 }
