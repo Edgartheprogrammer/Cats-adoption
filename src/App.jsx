@@ -1,25 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './styles/App.css'
-import CatsSlider from './components/CatsSlider'
-import CatCard from './components/CatCard'
-import Button from './components/Button'
-import Footer from './components/Footer'
-import HomePage from './pages/HomePage' 
-import AdoptPage from './pages/AdoptPage'
-import InConstruchion from './pages/InConstruction' 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
+// App.jsx
+import React from 'react'
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage.jsx'
+import AllCatsPage from './pages/AllCatsPage.jsx'
+import ContactPage from './pages/ContactPage.jsx'
+import './styles/App.css'
 
 function App() {
   return (
     <div>
-      <main>
-        
-      </main>
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/allCats" element={<AllCatsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
     </div>
   )
+
 }
-export default App
+
+export default App;
