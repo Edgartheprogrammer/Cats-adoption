@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './AdoptionInfo.module.css';
+import styles from './InfoText.module.css';
 
-const AdoptionInfo = () => {
+const InfoText = () => {
   return (
-    <div className={styles['adoption-info']}>
+    <div className={styles['info-text']}>
         <h1>Give a loving home to a furry friend!</h1>
         <p>Browse through a delightful collection of adorable cats, with unique personality and story. From playful kittens to serene seniors, every cat has so much love to give and is ready to become a cherished member of your home.</p>
         <h2>✨ Why Adopt?✨</h2>
@@ -19,4 +19,4 @@ const AdoptionInfo = () => {
   );
 };
 
-export default AdoptionInfo;
+export default InfoText;

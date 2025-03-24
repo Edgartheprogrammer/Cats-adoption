@@ -1,9 +1,9 @@
-/* AdoptionInfo.module.css */
-.adoption-info {
+/* InfoText.module.css */
+.info-text {
   max-width: 900px;
   width: 100%;
   padding: 20px;
-  font-family: 'Sofadi One', sans-serif;
+  font-family: 'Iansui', sans-serif;
   font-size: 1.2rem;
   color: #333;
   text-align: center;
@@ -15,7 +15,7 @@ h1, h2, h3 {
   font-weight: bolder;
 }
 
-.adoption-info p {
+.info-text p {
   margin: 0;
   font-weight: bold;
 }

@@ -1,8 +1,8 @@
-// AdoptImage.jsx
+// Banner.jsx
 import React from 'react';
-import styles from './AdoptImage.module.css';
+import styles from './Banner.module.css';
 
-const AdoptImage = ({ imageSrc, line1, line2 }) => {
+const Banner = ({ imageSrc, line1, line2 }) => {
   return (
     <div className={styles['image-container']}>
       <img src={imageSrc} alt="Cat" className={styles['cat-image']} />
@@ -14,4 +14,4 @@ const AdoptImage = ({ imageSrc, line1, line2 }) => {
   );
 };
 
-export default AdoptImage;
+export default Banner;
