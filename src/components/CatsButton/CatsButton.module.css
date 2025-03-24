@@ -1,0 +1,48 @@
+/* CatsButton.module.css */
+.image-button-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.kitten-image {
+  position: absolute;
+  top: -65px;
+  width: 120px;
+  height: auto;
+  z-index: 1;
+}
+
+.link-container {
+  width: 100%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.adopt-button {
+  width: 180px;
+  height: 60px;
+  background-color: #3fb753;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Iansui', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  z-index: 0;
+}
+
+.adopt-button:hover {
+  background-color: #3f8b8e;
+}
