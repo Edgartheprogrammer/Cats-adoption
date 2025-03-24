@@ -1,7 +1,7 @@
 // ContactPage.jsx
 import React from "react";
 import ContactForm from '../components/ContactForm/ContactForm.jsx';
-import styles from '../styles/ContactPage.module.css';
+import styles from '../ContactPage.module.css';
 
 const ContactPage = () => {
   return (
