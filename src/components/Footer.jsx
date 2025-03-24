@@ -15,7 +15,12 @@ const Footer = () => {
         </div>
                 
         <div className={styles.footerSocial}>
-            <img src='./images/social-media.png' alt='social media'/>
+          <a href='https://www.facebook.com/' target='_blank'>
+            <img src='./public/images/facebook.jpg' alt='facebook' /></a>
+          <a href='https://www.instagram.com/'>
+            <img src='./public/images/instagram.png' alt='instagram' /></a>
+          <a href='https://www.twitter.com/'></a>
+          <a href='https://www.linkedln.com/'></a>
         </div>
     </div>
   )
