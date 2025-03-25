@@ -1,7 +1,7 @@
 // AllCatsPage.jsx
 import React from 'react'
-import kittenIcon from '../assets/images/kitten-icon.png';
-import CatsButton from '../components/CatsButton/CatsButton.jsx';
+import kittenIcon from '../../assets/icons/kitten-icon.png';
+import CatsButton from '../../components/CatsButton/CatsButton.jsx';
 import styles from './AllCatsPage.module.css';
 
 const AllCatsPage = () => {

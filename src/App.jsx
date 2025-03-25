@@ -2,9 +2,9 @@
 // App.jsx
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage.jsx'
-import AllCatsPage from './pages/AllCatsPage.jsx'
-import AdoptPage from './pages/AdoptPage.jsx'
+import HomePage from './pages/HomePage/HomePage.jsx'
+import AllCatsPage from './pages/AllCatsPage/AllCatsPage.jsx'
+import AdoptPage from './pages/AdoptPage/AdoptPage.jsx'
 import './styles/App.css'
 
 function App() {

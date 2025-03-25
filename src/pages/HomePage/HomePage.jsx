@@ -1,10 +1,10 @@
 // HomePage.jsx
 import React from 'react';
-import bannerImage from '../assets/images/home-cat.jpg';
-import kittenIcon from '../assets/images/kitten-icon.png';
-import Banner from '../components/Banner/Banner.jsx'
-import AdoptionInfo from '../components/InfoText/InfoText.jsx';
-import CatsButton from '../components/CatsButton/CatsButton.jsx';
+import bannerImage from '../../assets/images/home-cat.jpg';
+import kittenIcon from '../../assets/icons/kitten-icon.png';
+import Banner from '../../components/Banner/Banner.jsx'
+import AdoptionInfo from '../../components/InfoText/InfoText.jsx';
+import CatsButton from '../../components/CatsButton/CatsButton.jsx';
 
 const HomePage = () => {
   return (
