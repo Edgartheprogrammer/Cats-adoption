@@ -1,92 +1,78 @@
 /* ContactForm.module.css */
-/* ContactForm.module.css */
-.contact-form {
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
+.form {
+  font-family: var(--font-primary);
+  width: 30%;
+  margin: 20px auto;
   padding: 25px;
-  background: #f0f8ff;
+  background: var(--form-bg);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.form-content {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
+.catHeader {
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 20px;
+  background: var(--header-bg);
+  border-radius: 6px;
+  color: var(--header-footer-text);
+  font-family: var(--font-heading);
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 100%;
+.field {
+  margin-bottom: 15px;
 }
 
-.form-group label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--text-color);
 }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  transition: border 0.3s ease-in-out;
-  box-sizing: border-box;
+input, textarea {
+  width: calc(100% - 10px);
+  padding: 10px 5px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--input-text);
 }
 
-.form-group textarea {
-  resize: vertical;
+input:focus, textarea:focus {
+  outline: 2px solid var(--button-bg);
+}
+
+textarea {
   min-height: 100px;
+  resize: vertical;
 }
 
 .error {
-  color: red;
-  font-size: 12px;
+  color: var(--error-color);
+  font-size: 0.9em;
   margin-top: 5px;
 }
 
-.successContainer {
-  min-height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .success {
-  color: green;
-  font-size: 14px;
+  padding: 10px;
+  margin: 15px 0;
+  background: var(--success-color);
+  color: white;
+  border-radius: 6px;
   text-align: center;
-  animation: fadeIn 0.5s ease-in;
 }
 
-.submit-button {
+.submitBtn {
   width: 100%;
   padding: 12px;
-  font-size: 16px;
-  font-weight: bold;
-  background: #67bbbf;
-  color: white;
+  background: var(--button-bg);
+  color: var(--button-text);
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
-  margin-top: 15px;
 }
 
-.submit-button:hover {
-  background: #3c6f71;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.submitBtn:hover {
+  background: var(--button-hover);
 }

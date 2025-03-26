@@ -1,89 +1,67 @@
-// src/components/CatCard/CatCard.jsx
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { addToFavorites, fetchFavorites, removeFromFavorites } from '../../services/catService';
-import styles from './CatsCard.module.css';
+import useFavoritesStore from '../../stores/favoritesStore.js';
+import styles from './CatCard.module.css';
 
 const CatCard = ({ cat }) => {
   const navigate = useNavigate();
-  const [isFavorite, setIsFavorite] = useState(false);
+  const { addFavorite, removeFavorite, isFavorited } = useFavoritesStore();
+  const [showFullDescription, setShowFullDescription] = useState(false);
   
-  // Проверяем, является ли кот избранным при загрузке компонента
-  useEffect(() => {
-    const checkIfFavorite = async () => {
-      try {
-        const favorites = await fetchFavorites();
-        const isInFavorites = favorites.some(favCat => favCat.id === cat.id);
-        setIsFavorite(isInFavorites);
-      } catch (error) {
-        console.error('Ошибка при проверке статуса избранного:', error);
-      }
-    };
-    
-    checkIfFavorite();
-  }, [cat.id]);
-  
-  // Функция для изменения статуса избранного
-  const handleFavoriteToggle = async () => {
-    try {
-      if (isFavorite) {
-        // Если уже в избранном, удаляем
-        await removeFromFavorites(cat.id);
-      } else {
-        // Если не в избранном, добавляем
-        await addToFavorites(cat);
-      }
-      // Переключаем состояние
-      setIsFavorite(!isFavorite);
-    } catch (error) {
-      alert('Ошибка при изменении статуса избранного: ' + error.message);
-    }
+  const breed = cat.breeds?.[0] || {};
+  const catName = breed.name || "Unknown Breed";
+  const description = breed.description || "No description available";
+
+  const shouldTruncate = description.length > 100;
+
+  const handleAdoptClick = () => {
+    navigate('/adopt', { state: { cat } });
   };
-  
-  // Функция для перехода на страницу адоптации
-  const handleAdopt = () => {
-    // Сохраняем выбранного кота в localStorage (для сохранения при обновлении страницы)
-    localStorage.setItem('adoptCat', JSON.stringify(cat));
-    // Переходим на страницу адоптации с ID кота
-    navigate(`/adopt/${cat.id}`);
-  };
-  
+
   return (
-    <div className={styles.cardContainer}>
-      {/* Контейнер с фотографией котика */}
-      <div className={styles.imageContainer}>
-        <img src={cat.url} alt="Cat" className={styles.catImage} />
-      </div>
+    <div className={styles.card}>
+      <img 
+        src={cat.url} 
+        alt={catName}
+        className={styles.image}
+        loading="lazy"
+      />
       
-      {/* Контейнер с названием породы */}
-      <div className={styles.breedContainer}>
-        <h3 className={styles.breedName}>{cat.breeds && cat.breeds.length > 0 ? cat.breeds[0].name : 'Неизвестная порода'}</h3>
-      </div>
-      
-      {/* Контейнер с кратким описанием */}
-      <div className={styles.descriptionContainer}>
-        <p className={styles.description}>
-          {cat.breeds && cat.breeds.length > 0 
-            ? cat.breeds[0].description?.substring(0, 100) + '...' 
-            : 'Очаровательный котик ищет любящий дом!'}
-        </p>
-      </div>
-      
-      {/* Контейнер с кнопками */}
-      <div className={styles.buttonsContainer}>
-        <button 
-          className={styles.adoptButton} 
-          onClick={handleAdopt}
-        >
-          Adopt Meow
-        </button>
+      <div className={styles.info}>
+        <h3 className={styles.name}>{catName}</h3>
         
-        <button 
-          className={`${styles.favoriteButton} ${isFavorite ? styles.favoriteActive : ''}`} 
-          onClick={handleFavoriteToggle}
-        >
-          ❤️
-        </button>
+        <div className={styles.descriptionContainer}>
+          <p className={`${styles.description} ${shouldTruncate && !showFullDescription ? styles.truncated : ''}`}>
+            {description}
+          </p>
+          {shouldTruncate && (
+            <button 
+              onClick={() => setShowFullDescription(!showFullDescription)}
+              className={styles.seeMore}
+              aria-label={showFullDescription ? 'Show less description' : 'Show more description'}
+            >
+              {showFullDescription ? 'See Less' : 'See More'}
+            </button>
+          )}
+        </div>
+
+        <div className={styles.actions}>
+          <button
+            onClick={handleAdoptClick}
+            className={styles.adoptButton}
+            aria-label={`Adopt ${catName}`}
+          >
+            Adopt Me
+          </button>
+          
+          <button
+            onClick={() => isFavorited(cat.id) ? removeFavorite(cat.id) : addFavorite(cat)}
+            className={`${styles.favoriteButton} ${isFavorited(cat.id) ? styles.favorited : ''}`}
+            aria-label={isFavorited(cat.id) ? 'Remove from favorites' : 'Add to favorites'}
+          >
+            {isFavorited(cat.id) ? '❤️' : '♡'}
+          </button>
+        </div>
       </div>
     </div>
   );

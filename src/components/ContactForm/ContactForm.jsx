@@ -1,131 +1,100 @@
 // ContactForm.jsx
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import useThemeStore from '../../stores/themeStore';
 import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const { theme } = useThemeStore();
+  const { state } = useLocation();
+  const navigate = useNavigate();
+  const cat = state?.cat || null;
+
+  const initialData = {
     name: "",
     email: "",
     phone: "",
-    message: "",
-  });
+    message: cat ? `I'm interested in adopting ${cat.breeds?.[0]?.name || "this cat"}!` : "",
+    catId: cat?.id || "",
+    catName: cat?.breeds?.[0]?.name || ""
+  };
 
+  const [formData, setFormData] = useState(initialData);
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e) => {
+  const fieldRules = {
+    name: value => /^[A-Za-z\s]{2,}$/.test(value) ? null : "Name needs 2+ letters",
+    email: value => /\S+@\S+\.\S+/.test(value) ? null : "Invalid email",
+    phone: value => /^\d{9}$/.test(value) ? null : "9-digit number required",
+    message: value => value.length >= 20 ? null : "Message needs 20+ characters"
+  };
+
+  const handleChange = e => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors(prev => ({ ...prev, [name]: "" }));
   };
 
-  const validateField = (name, value) => {
-    if (!value) return "This field is mandatory";
-
-    switch (name) {
-      case "name":
-        if (!/^[A-Za-z\s]{2,}$/.test(value))
-          return "Name must contain at least 2 letters";
-        break;
-      case "email":
-        if (!/^\S+@\S+\.\S+$/.test(value))
-          return "Enter a valid email address";
-        break;
-      case "phone":
-        if (!/^\d{9}$/.test(value))
-          return "Phone must be a 10-digit number";
-        break;
-      case "message":
-        if (value.length < 20)
-          return "Message must be at least 20 characters long";
-        break;
-      default:
-        break;
-    }
-    return "";
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-    Object.keys(formData).forEach((field) => {
-      const error = validateField(field, formData[field]);
-      if (error) newErrors[field] = error;
-    });
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-    if (validateForm()) {
-      console.log("Form submitted:", formData);
+    const newErrors = Object.entries(fieldRules).reduce((acc, [field, validate]) => {
+      const error = validate(formData[field]);
+      return error ? { ...acc, [field]: error } : acc;
+    }, {});
+
+    if (Object.keys(newErrors).length) {
+      setErrors(newErrors);
+    } else {
       setIsSubmitted(true);
-      setFormData({ name: "", email: "", phone: "", message: "" });
-      setErrors({});
+      setTimeout(() => navigate('/allCats'), 2000);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles["contact-form"]}>
-      <div className={styles["form-content"]}>
-        <div className={styles["form-group"]}>
-          <label>Name</label>
+    <form onSubmit={handleSubmit} className={styles.form} data-theme={theme}>
+      {cat && (
+        <div className={styles.catHeader}>
+          Applying to adopt: <span>{formData.catName}</span>
+          <input type="hidden" name="catId" value={formData.catId} />
+        </div>
+      )}
+
+      {['name', 'email', 'phone'].map(field => (
+        <div key={field} className={styles.field}>
+          <label>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
           <input
-            type="text"
-            name="name"
-            value={formData.name}
+            type={field === 'email' ? 'email' : 'text'}
+            name={field}
+            value={formData[field]}
             onChange={handleChange}
-            placeholder="Enter your name"
+            aria-required="true"
           />
-          {errors.name && <span className={styles.error}>{errors.name}</span>}
+          {errors[field] && <div className={styles.error}>{errors[field]}</div>}
         </div>
+      ))}
 
-        <div className={styles["form-group"]}>
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Enter your email"
-          />
-          {errors.email && <span className={styles.error}>{errors.email}</span>}
-        </div>
-
-        <div className={styles["form-group"]}>
-          <label>Phone</label>
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="Enter your phone number"
-            inputMode="numeric"
-          />
-          {errors.phone && <span className={styles.error}>{errors.phone}</span>}
-        </div>
-
-        <div className={styles["form-group"]}>
-          <label>Message</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Enter your message"
-            rows="4"
-          />
-          {errors.message && <span className={styles.error}>{errors.message}</span>}
-        </div>
-
-        <div className={styles.successContainer}>
-          {isSubmitted && 
-            <div className={styles.success}>Form submitted successfully!</div>
-          }
-        </div>
+      <div className={styles.field}>
+        <label>Message</label>
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          rows="4"
+          aria-required="true"
+        />
+        {errors.message && <div className={styles.error}>{errors.message}</div>}
       </div>
 
-      <button type="submit" className={styles["submit-button"]}>
-        Submit Meow
-      </button>
+      {isSubmitted ? (
+        <div className={styles.success}>
+          ✓ Submitted! We'll contact you soon. Redirecting...
+        </div>
+      ) : (
+        <button type="submit" className={styles.submitBtn}>
+          Submit Adoption Request
+        </button>
+      )}
     </form>
   );
 };

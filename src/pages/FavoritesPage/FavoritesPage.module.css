@@ -1,0 +1,41 @@
+/* src/pages/FavoritesPage.module.css */
+.favoritesPage {
+  padding: 20px;
+}
+
+.favoritesPage h1 {
+  text-align: center;
+  
+}
+
+.sliderContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 280px;
+}
+
+.noFavorites {
+  text-align: center;
+  color: #666;
+  margin-top: 40px;
+}

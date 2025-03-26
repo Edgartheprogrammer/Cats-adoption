@@ -1,0 +1,112 @@
+/* App.css */
+:root {
+  --white-color: white;
+  --bg-color: white;
+  --text-color: #333;
+  --header-text-color: #CD6633;
+  --body-text-color: #333;
+  --header-footer-bg: red;
+  --header-footer-text: white;
+  --adopt-text-color: #67BBBF;
+  --heading-color: #67BBBF;
+  --paragraph-color: #67BBBF;
+  --footer-bg: #67BBBF;
+  --footer-text: black;
+  --footer-link-color: black;
+  --footer-heading-size: 14px;
+  --footer-text-size: 13px;
+  --form-bg: #b9deff;
+  --input-bg: white;
+  --input-text: #333;
+  --input-border: #ccc;
+  --button-big-bg: #289447;
+  --button-big-hover: #236937;
+  --button-bg: #0e5e63;
+  --button-hover: #17b0bb;
+  --button-text: white;
+  --error-color: #ff4444;
+  --success-color: #4CAF50;
+  --header-bg: #67BBBF;
+  --header-icon-hover: #67BBBF;
+
+  /* Fonts */
+  --font-logo: 'Leckerli One', cursive;
+  --font-heading: 'Marhey', sans-serif;
+  --font-body: 'Iansui', sans-serif;
+  --font-stylish: 'Merienda', cursive;
+}
+
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-text-color: #898989;
+  --body-text-color: #565656;
+  --header-footer-bg: #333333;
+  --header-footer-text: #f0f0f0;
+  --adopt-text-color: #b0b0b0;
+  --heading-color: #d0d0d0;
+  --paragraph-color: #a0a0a0;
+  --footer-bg: #444444;
+  --footer-text: #e0e0e0;
+  --footer-link-color: #d0d0d0;
+  --form-bg: #1e1e1e;
+  --input-bg: #2d2d2d;
+  --input-text: #e0e0e0;
+  --input-border: #555555;
+
+  --button-bg: #666666;
+  --button-hover: #888888;
+
+  --button-big-bg: #393939;
+  --button-big-hover: #888888;
+
+  --button-text: #f0f0f0;
+  --error-color: #cc6666;
+  --success-color: #66aa66;
+  --header-bg: #333333;
+  --header-icon-hover: #888888;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-color);
+}
+
+.layout > :nth-child(2) {
+  flex: 1;
+  margin-top: 80px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: var(--header-text-color);
+  font-family: var(--font-heading);
+}
+
+button, label {
+  font-family: var(--font-heading);
+}
+
+p {
+  color: var(--body-text-color);
+  font-family: var(--font-body);
+}
+
+input, textarea {
+  font-family: var(--font-body);
+}
