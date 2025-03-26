@@ -1,0 +1,84 @@
+/* App.css */
+:root {
+  --bg-color: white;
+  --text-color: #333;
+  --header-footer-bg: red;
+  --header-footer-text: white;
+  --adopt-text-color: #67BBBF;
+  --heading-color: #67BBBF;
+  --paragraph-color: #67BBBF;
+  --footer-bg: #67BBBF;
+  --footer-text: black;
+  --footer-link-color: black;
+  --footer-heading-size: 14px;
+  --footer-text-size: 13px;
+  --form-bg: #f0f8ff;
+  --input-bg: white;
+  --input-text: #333;
+  --input-border: #ccc;
+  --button-bg: #67BBBF;
+  --button-hover: #3f8b8e;
+  --button-text: white;
+  --error-color: #ff4444;
+  --success-color: #4CAF50;
+  --header-bg: #67BBBF;
+  --header-icon-hover: #67BBBF;
+
+  /* Fonts */
+  --font-primary: 'Iansui', sans-serif;
+  --font-secondary: 'Merienda', cursive;
+  --font-logo: 'Leckerli One', cursive;
+  --font-handwriting: 'Marck Script', cursive;
+  --font-alternate: 'Marhey', sans-serif;
+  --font-combo: 'Combo', cursive;
+}
+
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-footer-bg: #333333;
+  --header-footer-text: #f0f0f0;
+  --adopt-text-color: #b0b0b0;
+  --heading-color: #d0d0d0;
+  --paragraph-color: #a0a0a0;
+  --footer-bg: #444444;
+  --footer-text: #e0e0e0;
+  --footer-link-color: #d0d0d0;
+  --form-bg: #1e1e1e;
+  --input-bg: #2d2d2d;
+  --input-text: #e0e0e0;
+  --input-border: #555555;
+  --button-bg: #666666;
+  --button-hover: #888888;
+  --button-text: #f0f0f0;
+  --error-color: #cc6666;
+  --success-color: #66aa66;
+  --header-bg: #333333;
+  --header-icon-hover: #888888;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-color);
+}
+
+.layout > :nth-child(2) {
+  flex: 1;
+  margin-top: 80px;
+  padding-bottom: 40px;
+}

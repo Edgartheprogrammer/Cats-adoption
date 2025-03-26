@@ -1,21 +1,26 @@
 /* InfoText.module.css */
-.info-text {
+.infoText {
   max-width: 900px;
   width: 100%;
   padding: 20px;
   font-family: 'Iansui', sans-serif;
   font-size: 1.2rem;
-  color: #333;
+  color: var(--text-color);
   text-align: center;
   margin: 0 auto;
   line-height: 1.8;
+  transition: color 0.3s ease;
 }
 
-h1, h2, h3 {
+.infoText h1, 
+.infoText h2, 
+.infoText h3 {
+  color: var(--heading-color, #67BBBF);
   font-weight: bolder;
 }
 
-.info-text p {
+.infoText p {
+  color: var(--text-color);
   margin: 0;
   font-weight: bold;
 }

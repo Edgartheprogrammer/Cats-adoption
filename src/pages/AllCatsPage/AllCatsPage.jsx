@@ -6,7 +6,7 @@ import styles from './AllCatsPage.module.css';
 
 const AllCatsPage = () => {
   return (
-    <main className="allCatsPage-container">
+    <main className={styles['allCatsPageContainer']}>
       <p>AllCatsPage</p>
       <CatsButton imageSrc={kittenIcon} buttonText="See All Meows" linkTo="/adopt" />
     </main>

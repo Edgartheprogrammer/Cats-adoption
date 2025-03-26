@@ -6,15 +6,18 @@
   align-items: center;
   gap: 20px;
   min-height: 100vh;
-  color: #67BBBF;
+  color: var(--adopt-text-color, #67BBBF);
   font-family: 'Merienda';
+  transition: color 0.3s ease;
 }
 
 h1 {
   margin: 0;
   font-weight: bolder;
+  color: var(--heading-color, inherit);
 }
 
 p {
   font-weight: bold;
+  color: var(--paragraph-color, inherit);
 }

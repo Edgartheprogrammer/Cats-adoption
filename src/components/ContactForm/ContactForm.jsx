@@ -1,8 +1,10 @@
 // ContactForm.jsx
 import React, { useState } from 'react';
 import styles from "./ContactForm.module.css";
+import useThemeStore from '../../store/themeStore';
 
 const ContactForm = () => {
+  const { theme } = useThemeStore();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -65,7 +67,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles["contact-form"]}>
+    <form onSubmit={handleSubmit} className={styles["contact-form"]} data-theme={theme}>
       <div className={styles["form-content"]}>
         <div className={styles["form-group"]}>
           <label>Name</label>
@@ -117,7 +119,7 @@ const ContactForm = () => {
         </div>
 
         <div className={styles.successContainer}>
-          {isSubmitted && 
+          {isSubmitted &&
             <div className={styles.success}>Form submitted successfully!</div>
           }
         </div>

@@ -1,18 +1,4 @@
 /* HomePage.module.css */
-.homepage-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 30px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
+/* .homepageContainer {
+  margin-top: 80px;
+} */
