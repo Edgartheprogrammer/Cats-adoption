@@ -1,11 +1,5 @@
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .title {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
-  }
+/* AllCatsPage.module.css */
+
+.container h1 {
+  margin-top: 1%;
+}

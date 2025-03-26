@@ -1,7 +1,10 @@
 /* App.css */
 :root {
+  --white-color: white;
   --bg-color: white;
   --text-color: #333;
+  --header-text-color: #CD6633;
+  --body-text-color: #333;
   --header-footer-bg: red;
   --header-footer-text: white;
   --adopt-text-color: #67BBBF;
@@ -12,12 +15,14 @@
   --footer-link-color: black;
   --footer-heading-size: 14px;
   --footer-text-size: 13px;
-  --form-bg: #f0f8ff;
+  --form-bg: #b9deff;
   --input-bg: white;
   --input-text: #333;
   --input-border: #ccc;
-  --button-bg: #67BBBF;
-  --button-hover: #3f8b8e;
+  --button-big-bg: #289447;
+  --button-big-hover: #236937;
+  --button-bg: #0e5e63;
+  --button-hover: #17b0bb;
   --button-text: white;
   --error-color: #ff4444;
   --success-color: #4CAF50;
@@ -25,17 +30,17 @@
   --header-icon-hover: #67BBBF;
 
   /* Fonts */
-  --font-primary: 'Iansui', sans-serif;
-  --font-secondary: 'Merienda', cursive;
   --font-logo: 'Leckerli One', cursive;
-  --font-handwriting: 'Marck Script', cursive;
-  --font-alternate: 'Marhey', sans-serif;
-  --font-combo: 'Combo', cursive;
+  --font-heading: 'Marhey', sans-serif;
+  --font-body: 'Iansui', sans-serif;
+  --font-stylish: 'Merienda', cursive;
 }
 
 [data-theme='dark'] {
   --bg-color: #121212;
   --text-color: #e0e0e0;
+  --header-text-color: #898989;
+  --body-text-color: #565656;
   --header-footer-bg: #333333;
   --header-footer-text: #f0f0f0;
   --adopt-text-color: #b0b0b0;
@@ -48,8 +53,13 @@
   --input-bg: #2d2d2d;
   --input-text: #e0e0e0;
   --input-border: #555555;
+
   --button-bg: #666666;
   --button-hover: #888888;
+
+  --button-big-bg: #393939;
+  --button-big-hover: #888888;
+
   --button-text: #f0f0f0;
   --error-color: #cc6666;
   --success-color: #66aa66;
@@ -80,5 +90,23 @@ body {
 .layout > :nth-child(2) {
   flex: 1;
   margin-top: 80px;
-  padding-bottom: 40px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: var(--header-text-color);
+  font-family: var(--font-heading);
+}
+
+button, label {
+  font-family: var(--font-heading);
+}
+
+p {
+  color: var(--body-text-color);
+  font-family: var(--font-body);
+}
+
+input, textarea {
+  font-family: var(--font-body);
 }

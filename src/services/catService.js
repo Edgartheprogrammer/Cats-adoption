@@ -5,7 +5,7 @@ const BASE_URL = 'https://api.thecatapi.com/v1';
 export const fetchRandomCats = async (limit = 10) => {
   try {
     const response = await fetch(
-      `${BASE_URL}/images/search?limit=${limit}&has_breeds=1&api_key=${API_KEY}`
+      `${BASE_URL}/images/search?limit=${limit}&has_name=1&has_breeds=1&api_key=${API_KEY}`
     );
     
     if (!response.ok) throw new Error('Failed to fetch cats');
