@@ -1,4 +1,4 @@
-// src/services/catService.js
+// catService.js
 const API_KEY = 'live_OUcCtZixRV8lk34E7i1CH0fjiz5jAKM8giwKY9jnvZdgA4klZdba7EX8Re6H9YxH';
 const BASE_URL = 'https://api.thecatapi.com/v1';
 

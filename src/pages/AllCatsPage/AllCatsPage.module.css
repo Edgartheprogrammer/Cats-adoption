@@ -1,4 +1,11 @@
-/* AllCatsPage.module.css */
-/* .AllCatsPageContainer {
-  margin-top: 100px;
-} */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
