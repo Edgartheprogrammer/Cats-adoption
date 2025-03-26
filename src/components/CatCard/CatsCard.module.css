@@ -79,13 +79,13 @@
     transform: scale(1.05);
   }
   
-  .favorite-button {
+  .favoriteButton {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: none;
-    background-color: #e53935;
-    color: white;
+    background-color: white; /* Белый цвет по умолчанию */
+    color: #aaa; /* Цвет иконки сердца по умолчанию (серый) */
     font-size: 20px;
     display: flex;
     align-items: center;
@@ -93,7 +93,10 @@
     cursor: pointer;
     transition: all 0.3s ease;
   }
-  
-  .favorite-button:hover {
+  .favoriteButton:hover {
     transform: scale(1.1);
+  }
+  .favoriteActive {
+    background-color: #e53935; /* Красный фон для активного состояния */
+    color: white; /* Белый цвет иконки для активного состояния */
   }

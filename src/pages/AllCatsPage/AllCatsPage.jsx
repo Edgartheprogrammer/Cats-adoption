@@ -1,16 +1,15 @@
-// AllCatsPage.jsx
-import React from 'react'
-import kittenIcon from '../../assets/icons/kitten-icon.png';
-import CatsButton from '../../components/CatsButton/CatsButton.jsx';
+/// src/pages/AllCatsPage.jsx
+import React from 'react';
+import CatsSlider from '../components/CatsSlider/CatsSlider';
 import styles from './AllCatsPage.module.css';
 
 const AllCatsPage = () => {
   return (
-    <main className="allCatsPage-container">
-      <p>AllCatsPage</p>
-      <CatsButton imageSrc={kittenIcon} buttonText="See All Meows" linkTo="/adopt" />
-    </main>
-  )
-}
+    <div className={styles.container}>
+      <h1 className={styles.title}>Наши котики</h1>
+      <CatsSlider />
+    </div>
+  );
+};
 
-export default AllCatsPage
+export default AllCatsPage;

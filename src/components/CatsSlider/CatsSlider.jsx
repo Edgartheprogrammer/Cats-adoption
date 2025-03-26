@@ -1,3 +1,4 @@
+// src/components/CatsSlider/CatsSlider.jsx
 import React, { useState, useEffect } from 'react';
 import CatCard from '../CatCard/CatCard';
 import { fetchCats } from '../../services/catService';
@@ -34,16 +35,6 @@ const CatsSlider = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + cats.length) % cats.length);
   };
   
-  const handleAdopt = (catId) => {
-    // Перенаправление на страницу усыновления
-    window.location.href = '/adopt';
-  };
-  
-  const handleFavorite = (catId) => {
-    // Здесь можно добавить логику для сохранения избранных котиков
-    console.log(`Добавлен в избранное: ${catId}`);
-  };
-  
   if (loading) {
     return <div className={styles.loading}>Загрузка котиков...</div>;
   }
@@ -58,19 +49,15 @@ const CatsSlider = () => {
   
   return (
     <div className={styles.sliderContainer}>
-      <div className={styles.navButtonLeft} onClick={handlePrev}>
+      <div className={`${styles.navButton} ${styles.navButtonLeft}`} onClick={handlePrev}>
         &lt;
       </div>
       
       <div className={styles.cardWrapper}>
-        <CatCard
-          cat={cats[currentIndex]}
-          onAdopt={handleAdopt}
-          onFavorite={handleFavorite}
-        />
+        <CatCard cat={cats[currentIndex]} />
       </div>
       
-      <div className={styles.navButtonRight} onClick={handleNext}>
+      <div className={`${styles.navButton} ${styles.navButtonRight}`} onClick={handleNext}>
         &gt;
       </div>
     </div>

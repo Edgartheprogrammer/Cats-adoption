@@ -5,7 +5,6 @@ import kittenIcon from '../../assets/icons/kitten-icon.png';
 import Banner from '../../components/Banner/Banner.jsx'
 import AdoptionInfo from '../../components/InfoText/InfoText.jsx';
 import CatsButton from '../../components/CatsButton/CatsButton.jsx';
-import CatsSlider from '../../components/CatsSlider/CatsSlider.jsx';//!!!!!
 
 const HomePage = () => {
   return (
@@ -16,11 +15,6 @@ const HomePage = () => {
         line2="Don't shop.."/>
       <AdoptionInfo />
 
-      {/* Добавляем компонент слайдера */}
-      <div className="slider-section">
-        <h2 className="section-title">Наши котики</h2>
-        <CatsSlider />
-      </div>
 
       <CatsButton imageSrc={kittenIcon} buttonText="See All Meows" linkTo="/allCats" />
     </main>

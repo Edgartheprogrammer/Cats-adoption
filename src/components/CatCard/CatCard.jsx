@@ -1,7 +1,53 @@
-import React from 'react';
+// src/components/CatCard/CatCard.jsx
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { addToFavorites, fetchFavorites, removeFromFavorites } from '../../services/catService';
 import styles from './CatsCard.module.css';
 
-const CatCard = ({ cat, onAdopt, onFavorite }) => {
+const CatCard = ({ cat }) => {
+  const navigate = useNavigate();
+  const [isFavorite, setIsFavorite] = useState(false);
+  
+  // Проверяем, является ли кот избранным при загрузке компонента
+  useEffect(() => {
+    const checkIfFavorite = async () => {
+      try {
+        const favorites = await fetchFavorites();
+        const isInFavorites = favorites.some(favCat => favCat.id === cat.id);
+        setIsFavorite(isInFavorites);
+      } catch (error) {
+        console.error('Ошибка при проверке статуса избранного:', error);
+      }
+    };
+    
+    checkIfFavorite();
+  }, [cat.id]);
+  
+  // Функция для изменения статуса избранного
+  const handleFavoriteToggle = async () => {
+    try {
+      if (isFavorite) {
+        // Если уже в избранном, удаляем
+        await removeFromFavorites(cat.id);
+      } else {
+        // Если не в избранном, добавляем
+        await addToFavorites(cat);
+      }
+      // Переключаем состояние
+      setIsFavorite(!isFavorite);
+    } catch (error) {
+      alert('Ошибка при изменении статуса избранного: ' + error.message);
+    }
+  };
+  
+  // Функция для перехода на страницу адоптации
+  const handleAdopt = () => {
+    // Сохраняем выбранного кота в localStorage (для сохранения при обновлении страницы)
+    localStorage.setItem('adoptCat', JSON.stringify(cat));
+    // Переходим на страницу адоптации с ID кота
+    navigate(`/adopt/${cat.id}`);
+  };
+  
   return (
     <div className={styles.cardContainer}>
       {/* Контейнер с фотографией котика */}
@@ -24,16 +70,17 @@ const CatCard = ({ cat, onAdopt, onFavorite }) => {
       </div>
       
       {/* Контейнер с кнопками */}
-      <div className="buttons-container">
+      <div className={styles.buttonsContainer}>
         <button 
-          className="adopt-button" 
-          onClick={() => onAdopt(cat.id)}
+          className={styles.adoptButton} 
+          onClick={handleAdopt}
         >
           Adopt Meow
         </button>
+        
         <button 
-          className="favorite-button" 
-          onClick={() => onFavorite(cat.id)}
+          className={`${styles.favoriteButton} ${isFavorite ? styles.favoriteActive : ''}`} 
+          onClick={handleFavoriteToggle}
         >
           ❤️
         </button>
