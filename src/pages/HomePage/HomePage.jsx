@@ -14,6 +14,8 @@ const HomePage = () => {
         line1="Adopt.."
         line2="Don't shop.."/>
       <AdoptionInfo />
+
+
       <CatsButton imageSrc={kittenIcon} buttonText="See All Meows" linkTo="/allCats" />
     </main>
   );
