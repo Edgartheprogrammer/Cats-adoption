@@ -1,6 +1,6 @@
 // Footer.jsx
 import React from 'react';
-import useThemeStore from '../../store/themeStore';
+import useThemeStore from '../../stores/themeStore.js';
 import styles from './Footer.module.css';
 import facebookIcon from '../../assets/icons/facebook-icon.png';
 import linkedinIcon from '../../assets/icons/linkedin-icon.png';

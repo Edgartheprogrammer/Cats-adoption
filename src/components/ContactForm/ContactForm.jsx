@@ -1,7 +1,7 @@
 // ContactForm.jsx
 import React, { useState } from 'react';
 import styles from "./ContactForm.module.css";
-import useThemeStore from '../../store/themeStore';
+import useThemeStore from '../../stores/themeStore.js';
 
 const ContactForm = () => {
   const { theme } = useThemeStore();

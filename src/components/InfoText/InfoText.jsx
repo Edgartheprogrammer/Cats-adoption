@@ -1,5 +1,5 @@
 import React from 'react';
-import useThemeStore from '../../store/themeStore';
+import useThemeStore from '../../stores/themeStore.js';
 import styles from './InfoText.module.css';
 
 const InfoText = () => {

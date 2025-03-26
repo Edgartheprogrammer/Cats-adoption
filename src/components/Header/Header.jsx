@@ -1,7 +1,7 @@
 // Header.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useThemeStore from '../../store/themeStore';
+import useThemeStore from '../../stores/themeStore.js';
 import styles from './Header.module.css';
 import pawDecoration from '../../assets/images/cats-paw.png';
 import logo from '../../assets/icons/logo.png';
@@ -33,7 +33,7 @@ const Header = () => {
             />
           </Link>
 
-          <Link to="/favorite">
+          <Link to="/favorites">
             <img
               src={favoriteIcon}
               alt="Favorites"
