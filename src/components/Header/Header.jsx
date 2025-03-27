@@ -16,7 +16,7 @@ const Header = () => {
     <header className={styles.header} data-theme={theme}>
       <div className={styles.container}>
         <Link to="/" className={styles.logoLink}>
-          <img src={logo} alt="Cat Adoption Logo" className={styles.logo} />
+          <img src={logo} alt="Adopt Meow Logo" className={styles.logo} />
         </Link>
 
         <div className={styles.pawDecoration}>
