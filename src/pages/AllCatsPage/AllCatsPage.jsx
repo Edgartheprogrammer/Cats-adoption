@@ -1,4 +1,4 @@
-// AllCatsPage.jsx
+// src/pages/AllCatsPage.jsx
 import { useState, useEffect } from 'react';
 import { fetchRandomCats } from '../../services/catService.js';
 import CatsSlider from '../../components/CatsSlider/CatsSlider.jsx';

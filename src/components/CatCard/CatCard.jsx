@@ -1,13 +1,18 @@
+// CatCard.jsx
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFavoritesStore from '../../stores/favoritesStore.js';
 import styles from './CatCard.module.css';
+import useThemeStore from '../../stores/themeStore';
+import whiteStar from '../../assets/icons/white-star.png';
+import goldStar from '../../assets/icons/gold-star.png';
 
 const CatCard = ({ cat }) => {
+  const { theme } = useThemeStore();
   const navigate = useNavigate();
   const { addFavorite, removeFavorite, isFavorited } = useFavoritesStore();
   const [showFullDescription, setShowFullDescription] = useState(false);
-  
+
   const breed = cat.breeds?.[0] || {};
   const catName = breed.name || "Unknown Breed";
   const description = breed.description || "No description available";
@@ -20,22 +25,22 @@ const CatCard = ({ cat }) => {
 
   return (
     <div className={styles.card}>
-      <img 
-        src={cat.url} 
+      <img
+        src={cat.url}
         alt={catName}
         className={styles.image}
         loading="lazy"
       />
-      
+
       <div className={styles.info}>
         <h3 className={styles.name}>{catName}</h3>
-        
+
         <div className={styles.descriptionContainer}>
           <p className={`${styles.description} ${shouldTruncate && !showFullDescription ? styles.truncated : ''}`}>
             {description}
           </p>
           {shouldTruncate && (
-            <button 
+            <button
               onClick={() => setShowFullDescription(!showFullDescription)}
               className={styles.seeMore}
               aria-label={showFullDescription ? 'Show less description' : 'Show more description'}
@@ -53,13 +58,17 @@ const CatCard = ({ cat }) => {
           >
             Adopt Me
           </button>
-          
+
           <button
             onClick={() => isFavorited(cat.id) ? removeFavorite(cat.id) : addFavorite(cat)}
-            className={`${styles.favoriteButton} ${isFavorited(cat.id) ? styles.favorited : ''}`}
+            className={styles.favoriteButton}
             aria-label={isFavorited(cat.id) ? 'Remove from favorites' : 'Add to favorites'}
           >
-            {isFavorited(cat.id) ? '❤️' : '♡'}
+            <img
+              src={isFavorited(cat.id) ? goldStar : whiteStar}
+              alt={isFavorited(cat.id) ? 'Favorited' : 'Not favorited'}
+              className={styles.starIcon}
+            />
           </button>
         </div>
       </div>

@@ -1,7 +1,7 @@
 // src/pages/FavoritesPage.jsx
 import useFavoritesStore from '../../stores/favoritesStore.js';
 import CatCard from '../../components/CatCard/CatCard.jsx';
-import styles from './FavoritesPage.module.css'; // Import CSS module
+import styles from './FavoritesPage.module.css';
 
 const FavoritesPage = () => {
   const { favorites } = useFavoritesStore();

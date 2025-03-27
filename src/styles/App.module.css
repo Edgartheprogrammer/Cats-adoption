@@ -28,12 +28,17 @@
   --success-color: #4CAF50;
   --header-bg: #67BBBF;
   --header-icon-hover: #67BBBF;
-
   /* Fonts */
   --font-logo: 'Leckerli One', cursive;
   --font-heading: 'Marhey', sans-serif;
   --font-body: 'Iansui', sans-serif;
   --font-stylish: 'Merienda', cursive;
+  /* Card */
+  --card-bg: white;
+  --card-border: #e1e1e1;
+  --card-text: #333;
+  --card-description: #666;
+  --see-more-color: #67BBBF;
 }
 
 [data-theme='dark'] {
@@ -53,18 +58,21 @@
   --input-bg: #2d2d2d;
   --input-text: #e0e0e0;
   --input-border: #555555;
-
   --button-bg: #666666;
   --button-hover: #888888;
-
   --button-big-bg: #393939;
   --button-big-hover: #888888;
-
   --button-text: #f0f0f0;
   --error-color: #cc6666;
   --success-color: #66aa66;
   --header-bg: #333333;
   --header-icon-hover: #888888;
+  /* Card */
+  --card-bg: #1e1e1e;
+  --card-border: #444;
+  --card-text: #e0e0e0;
+  --card-description: #a0a0a0;
+  --see-more-color: #888;
 }
 
 html, body {
