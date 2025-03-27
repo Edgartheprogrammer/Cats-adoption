@@ -1,41 +1,24 @@
-/* src/pages/FavoritesPage.module.css */
-.favoritesPage {
-  padding: 20px;
-}
-
-.favoritesPage h1 {
+/* FavoritesPage.module.css */
+.loading {
   text-align: center;
-  
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--text-color);
 }
 
-.sliderContainer {
-  width: 100%;
-  overflow: hidden;
+.emptyState {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 0 auto;
   position: relative;
-  padding: 1rem 0;
 }
 
-.slider {
-  display: flex;
-  gap: 1.5rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 1rem;
-  scrollbar-width: none;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
-}
-
-.slide {
-  scroll-snap-align: start;
-  flex: 0 0 auto;
-  width: 280px;
-}
-
-.noFavorites {
-  text-align: center;
-  color: #666;
-  margin-top: 40px;
+.emptyState p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
 }

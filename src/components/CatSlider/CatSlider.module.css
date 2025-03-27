@@ -1,0 +1,43 @@
+/* CatSlider.module.css */
+.sliderContainer {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cardsWrapper {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0;
+  scrollbar-width: none;
+}
+
+.cardItem {
+  scroll-snap-align: start;
+  flex: 0 0 calc(25% - 1.5rem);
+  min-width: 200px;
+  transition: transform 0.2s;
+}
+
+@media (max-width: 1200px) {
+  .cardItem {
+    flex: 0 0 calc(33.33% - 1.33rem);
+  }
+}
+
+@media (max-width: 992px) {
+  .cardItem {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .sliderContainer {
+    padding: 0 1rem;
+  }
+  .cardItem {
+    flex: 0 0 100%;
+  }
+}
