@@ -21,7 +21,7 @@ const AllCatsPage = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <h1>Available Cats</h1>
       {state.loading ? (
         <div className={styles.loading}>Loading cats...</div>
@@ -35,7 +35,7 @@ const AllCatsPage = () => {
       ) : (
         <div className={styles.empty}>No cats available</div>
       )}
-    </div>
+    </main>
   );
 };
 

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import useFavoritesStore from '../../stores/favoritesStore';
 import CatSlider from '../../components/CatSlider/CatSlider';
 import styles from './FavoritesPage.module.css';
+import React from 'react';
 
 const FavoritesPage = () => {
   const { favorites } = useFavoritesStore();
@@ -14,7 +15,7 @@ const FavoritesPage = () => {
   }, []);
 
   return (
-    <div className={styles.favoritesPage}>
+    <main className={styles.favoritesPage}>
       <h1>Your Favorite Cats</h1>
       
       {isInitialLoad ? (
@@ -24,15 +25,9 @@ const FavoritesPage = () => {
       ) : (
         <div className={styles.emptyState}>
           <p>You haven't favorited any cats yet!</p>
-          <button 
-            className={styles.browseButton}
-            onClick={() => window.location.href = '/all-cats'}
-          >
-            Browse Cats
-          </button>
         </div>
       )}
-    </div>
+    </main>
   );
 };
 
