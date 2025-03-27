@@ -27,7 +27,7 @@
 .adopt-button {
   width: 180px;
   height: 60px;
-  background-color: var(--button-big-bg);
+  background-color: var(--button-bg);
   border-radius: 20px;
   cursor: pointer;
   border: none;
@@ -43,5 +43,5 @@
 }
 
 .adopt-button:hover {
-  background-color: var(--button-big-hover);
+  background-color: var(--button-hover);
 }

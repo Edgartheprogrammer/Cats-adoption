@@ -14,7 +14,6 @@
 
 .container {
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -27,6 +26,7 @@
   align-items: center;
   text-decoration: none;
   z-index: 2;
+  margin-right: auto;
 }
 
 .logo {
@@ -34,6 +34,15 @@
   width: auto;
   object-fit: contain;
   transition: filter 0.3s ease;
+  margin-left: 10%;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.logo:active {
+  transform: scale(0.95);
 }
 
 .pawDecoration {
@@ -42,6 +51,7 @@
   transform: translateX(-50%);
   bottom: -10px;
   z-index: 1;
+  pointer-events: none;
 }
 
 .pawImage {
@@ -52,13 +62,15 @@
 .navIcons {
   display: flex;
   align-items: center;
-  gap: 15px;
   z-index: 2;
+  /* gap: 20px; */
+  gap: 20%;
+  margin-right: 5%;
 }
 
 .navIcon {
   width: auto;
-  height: 32px;
+  height: 40px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -72,6 +84,8 @@
 }
 
 .themeToggle {
+  display: flex;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;

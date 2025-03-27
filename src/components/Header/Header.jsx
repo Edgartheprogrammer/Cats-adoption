@@ -53,6 +53,7 @@ const Header = () => {
               className={styles.navIcon}
             />
           </button>
+          
         </div>
       </div>
     </header>

@@ -1,27 +1,36 @@
 // src/pages/FavoritesPage.jsx
-import useFavoritesStore from '../../stores/favoritesStore.js';
-import CatCard from '../../components/CatCard/CatCard.jsx';
+import { useState } from 'react';
+import useFavoritesStore from '../../stores/favoritesStore';
+import CatSlider from '../../components/CatSlider/CatSlider';
 import styles from './FavoritesPage.module.css';
 
 const FavoritesPage = () => {
   const { favorites } = useFavoritesStore();
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+  useState(() => {
+    const timer = setTimeout(() => setIsInitialLoad(false), 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className={styles.favoritesPage}>
       <h1>Your Favorite Cats</h1>
       
-      {favorites.length > 0 ? (
-        <div className={styles.sliderContainer}>
-          <div className={styles.slider}>
-            {favorites.map(cat => (
-              <div key={cat.id} className={styles.slide}>
-                <CatCard cat={cat} />
-              </div>
-            ))}
-          </div>
-        </div>
+      {isInitialLoad ? (
+        <div className={styles.loading}>Loading favorites...</div>
+      ) : favorites.length > 0 ? (
+        <CatSlider cats={favorites} />
       ) : (
-        <p className={styles.noFavorites}>You haven't favorited any cats yet!</p>
+        <div className={styles.emptyState}>
+          <p>You haven't favorited any cats yet!</p>
+          <button 
+            className={styles.browseButton}
+            onClick={() => window.location.href = '/all-cats'}
+          >
+            Browse Cats
+          </button>
+        </div>
       )}
     </div>
   );
