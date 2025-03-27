@@ -1,5 +1,6 @@
 # React + Vite
 
+<<<<<<< Updated upstream
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
@@ -10,3 +11,16 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+=======
+```
+npm install --save-dev jest @testing-library/react @testing-library/jest-dom @testing-library/user-event jest-environment-jsdom @swc/jest identity-obj-proxy cross-env
+```
+
+Clear Cache
+npx jest --clearCache
+rm -rf node_modules/.cache
+
+Run Test
+npm test
+npm test HomePage.test.js
+>>>>>>> Stashed changes
