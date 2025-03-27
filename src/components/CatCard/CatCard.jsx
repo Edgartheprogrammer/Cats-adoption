@@ -24,7 +24,7 @@ const CatCard = ({ cat }) => {
   };
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} data-theme={theme}>
       <img
         src={cat.url}
         alt={catName}
@@ -45,7 +45,7 @@ const CatCard = ({ cat }) => {
               className={styles.seeMore}
               aria-label={showFullDescription ? 'Show less description' : 'Show more description'}
             >
-              {showFullDescription ? 'See Less' : 'See More'}
+              {showFullDescription ? 'see less' : 'see more'}
             </button>
           )}
         </div>

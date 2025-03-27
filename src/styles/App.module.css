@@ -34,11 +34,15 @@
   --font-body: 'Iansui', sans-serif;
   --font-stylish: 'Merienda', cursive;
   /* Card */
-  --card-bg: white;
-  --card-border: #e1e1e1;
-  --card-text: #333;
-  --card-description: #666;
-  --see-more-color: #67BBBF;
+  --card-bg: #fce4ec;
+  --card-border: #31878c;
+  --card-description: #cd6633;
+  --see-more-color: #d4591c;
+  --card-title-color: #31878c;
+  --card-button-bg: #31878c;
+  --card-button-hover: #4c9e9b;
+  --card-button-text: white;
+  --card-shadow: 0 4px 12px rgba(255, 182, 193, 0.3);
 }
 
 [data-theme='dark'] {
@@ -68,14 +72,20 @@
   --header-bg: #333333;
   --header-icon-hover: #888888;
   /* Card */
-  --card-bg: #1e1e1e;
-  --card-border: #444;
-  --card-text: #e0e0e0;
-  --card-description: #a0a0a0;
-  --see-more-color: #888;
+  --card-bg: #1a1a2e;
+  --card-border: #4a2d52;
+  --card-text: #f8bbd0;
+  --card-description: #bb86fc;
+  --see-more-color: #82b1ff;
+  --card-title-color: #ff79b0;
+  --card-button-bg: #3700b3;
+  --card-button-hover: #6200ee;
+  --card-button-text: #ffffff;
+  --card-shadow: 0 4px 8px rgba(75, 0, 130, 0.3);
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -95,18 +105,21 @@ body {
   background-color: var(--bg-color);
 }
 
-.layout > :nth-child(2) {
+.layout> :nth-child(2) {
   flex: 1;
   margin-top: 80px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
   color: var(--header-text-color);
   font-family: var(--font-heading);
 }
 
-button, label {
+button,
+label {
   font-family: var(--font-heading);
 }
 
@@ -115,6 +128,7 @@ p {
   font-family: var(--font-body);
 }
 
-input, textarea {
+input,
+textarea {
   font-family: var(--font-body);
 }
