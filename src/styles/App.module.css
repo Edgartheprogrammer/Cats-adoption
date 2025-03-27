@@ -28,12 +28,21 @@
   --success-color: #4CAF50;
   --header-bg: #67BBBF;
   --header-icon-hover: #67BBBF;
-
   /* Fonts */
   --font-logo: 'Leckerli One', cursive;
   --font-heading: 'Marhey', sans-serif;
   --font-body: 'Iansui', sans-serif;
   --font-stylish: 'Merienda', cursive;
+  /* Card */
+  --card-bg: #fce4ec;
+  --card-border: #31878c;
+  --card-description: #cd6633;
+  --see-more-color: #d4591c;
+  --card-title-color: #31878c;
+  --card-button-bg: #31878c;
+  --card-button-hover: #4c9e9b;
+  --card-button-text: white;
+  --card-shadow: 0 4px 12px rgba(255, 182, 193, 0.3);
 }
 
 [data-theme='dark'] {
@@ -53,21 +62,30 @@
   --input-bg: #2d2d2d;
   --input-text: #e0e0e0;
   --input-border: #555555;
-
   --button-bg: #666666;
   --button-hover: #888888;
-
   --button-big-bg: #393939;
   --button-big-hover: #888888;
-
   --button-text: #f0f0f0;
   --error-color: #cc6666;
   --success-color: #66aa66;
   --header-bg: #333333;
   --header-icon-hover: #888888;
+  /* Card */
+  --card-bg: #1a1a2e;
+  --card-border: #4a2d52;
+  --card-text: #f8bbd0;
+  --card-description: #bb86fc;
+  --see-more-color: #82b1ff;
+  --card-title-color: #ff79b0;
+  --card-button-bg: #3700b3;
+  --card-button-hover: #6200ee;
+  --card-button-text: #ffffff;
+  --card-shadow: 0 4px 8px rgba(75, 0, 130, 0.3);
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -87,18 +105,21 @@ body {
   background-color: var(--bg-color);
 }
 
-.layout > :nth-child(2) {
+.layout> :nth-child(2) {
   flex: 1;
   margin-top: 80px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
   color: var(--header-text-color);
   font-family: var(--font-heading);
 }
 
-button, label {
+button,
+label {
   font-family: var(--font-heading);
 }
 
@@ -107,6 +128,7 @@ p {
   font-family: var(--font-body);
 }
 
-input, textarea {
+input,
+textarea {
   font-family: var(--font-body);
 }
