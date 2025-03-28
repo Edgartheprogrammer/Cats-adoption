@@ -1,0 +1,51 @@
+/* Breadcrumbs.module.css */
+.breadcrumbContainer {
+  width: 100%;
+  font-family: var(--font-body);
+}
+
+.breadcrumbList {  
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumbLink {
+  color: var(--adopt-text-color);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.breadcrumbLink:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0;
+  padding: 0;
+  color: var(--adopt-text-color);
+}
+
+.currentPage {
+  color: var(--card-button-hover);
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
