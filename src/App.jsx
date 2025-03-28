@@ -1,21 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './styles/App.css'
-import CatsSlider from './components/CatsSlider'
-import CatCard from './components/CatCard'
-import Button from './components/Button'
-
+// App.jsx
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage/HomePage.jsx'
+import AllCatsPage from './pages/AllCatsPage/AllCatsPage.jsx'
+import AdoptPage from './pages/AdoptPage/AdoptPage.jsx'
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage.jsx'
+import Footer from './components/Footer/Footer.jsx';
+import Header from './components/Header/Header.jsx';
+import styles from './styles/App.module.css'
+import useThemeStore from './stores/themeStore';
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const { theme } = useThemeStore();
 
   return (
-    <div>
-    
-      
+    <div className={styles['layout']} data-theme={theme}>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/allCats" element={<AllCatsPage />} />
+        <Route path="/adopt" element={<AdoptPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+      </Routes>
+      <Footer />
     </div>
   )
+
 }
 
-export default App
+export default App;

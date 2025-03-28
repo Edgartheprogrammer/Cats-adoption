@@ -1,0 +1,24 @@
+/* FavoritesPage.module.css */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.emptyState {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.emptyState p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}

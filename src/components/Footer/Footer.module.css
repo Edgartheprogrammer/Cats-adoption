@@ -1,0 +1,56 @@
+/* Footer.module.css */
+.footerContainer {
+  width: 100%;
+  background-color: var(--header-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  margin-top: auto;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footerSocial {
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5%;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socialIcon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.footerLinks {
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0.5%;
+  display: flex;
+  gap: 2rem;
+}
+
+.footerLink {
+  color: var(--footer-text);
+  font-family: var(--font-heading);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.footerLink:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
