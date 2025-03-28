@@ -12,17 +12,13 @@ Tired of scrolling through endless cat videos and wishing you could cuddle one i
 - 🌑 **Dark Mode** - Browse without hurting your eyes. Switch to dark mode!
 - 🧪 **Tests** - Jest tests covering essential units
 
- ![Screenshot 2025-03-28 160842](https://github.com/user-attachments/assets/b7adbebb-880b-4feb-9ad7-7c1eb1a53770)
+## 👥 Meet the Team
 
-## 🐱‍👤 Meet the Team
-Natalia - Product Owner (Chief Nap Officer 😴)
-<img src="https://img.icons8.com/fluency/24/000000/github.png" width="20"/> <img> github.com/NataKaz
-
-Omar - Scrum Master (Head of Keyboard Walking ⌨️)
-<img src="https://img.icons8.com/fluency/24/000000/github.png" width="20"/> <img> github.com/Edgartheprogrammer
-
-Hema – Developer (Ball of Yarn Manager 🧶)
-<img src="https://img.icons8.com/fluency/24/000000/github.png" width="20"/> <img> github.com/void-craft
+| Role              | Member           | GitHub | LinkedIn |
+|-------------------|------------------|--------|----------|
+| **Product Owner** | Natalia (😴 Chief Nap Officer) | [@NataKaz](https://github.com/NataKaz) | Natalia |
+| **Scrum Master**  | Omar (⌨️ Head of Keyboard Walking) | [@Edgartheprogrammer](https://github.com/Edgartheprogrammer) | [Omar](https://www.linkedin.com/in/edgar-omar-guti%C3%A9rrez-hern%C3%A1ndez) |
+| **Developer**     | Hema (🧶 Ball of Yarn Manager) | [@void-craft](https://github.com/void-craft) | [Hema](https://linkedin.com/in/hemaps) |
 
 ## 🛠️ Quick Start
 
