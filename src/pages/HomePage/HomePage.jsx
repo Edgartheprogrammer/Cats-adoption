@@ -5,11 +5,10 @@ import kittenIcon from '../../assets/icons/kitten-icon.png';
 import Banner from '../../components/Banner/Banner.jsx';
 import AdoptionInfo from '../../components/InfoText/InfoText.jsx';
 import CatsButton from '../../components/CatsButton/CatsButton.jsx';
-import styles from './HomePage.module.css';
 
 const HomePage = () => {
   return (
-    <main className={styles['homepageContainer']}>
+    <main className='homepageContainer'>
       <Banner
         imageSrc={bannerImage}
         line1="Adopt.."
