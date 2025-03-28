@@ -19,8 +19,8 @@
   --input-bg: white;
   --input-text: #333;
   --input-border: #ccc;
-  --button-bg: #4CAF50;
-  --button-hover: #010101;
+  --button-bg:  #fbb6b6;
+  --button-hover: #e4b9b9;
   --button-text: white;
   --error-color: #ff4444;
   --success-color: #4CAF50;
@@ -33,15 +33,15 @@
   --font-stylish: 'Merienda', cursive;
   /* Card */
   --card-bg: #f9e3e3;
-  --card-accent: #e57373;
+  --card-accent:  white;;
   --card-title: #e57373;
-  --card-text: #fff8e1;
-  --card-link: #fff8e1;
-  --card-button-bg: white;
-  --card-button-text: #e57373;
-  --card-button-hover: #f5f5f5;
+  --card-text: #e57373;
+  --card-link:  #e57373;
+  --card-button-bg:  #f29b9b;
+  --card-button-text: white;
+  --card-button-hover: #f0dede;
   --favorite-button-bg: #fd766c;
-  --favorite-button-hover: #d32f2f;
+  --favorite-button-hover: #eb5353;
 }
 
 [data-theme='dark'] {
