@@ -7,7 +7,6 @@ Tired of scrolling through endless cat videos and wishing you could cuddle one i
 - ✨ **Browse Cats** - See all the fluffy, mischievous, and sleepy cats up for adoption
 - ❤️ **Save Favorites** - Heart your top picks so you don't lose them!
 - 🏠 **Adopt Now** - Simple form to start the adoption process
-- 🐟 **Virtual Treats** - Send digital fish to your favorite cats
 
 ## 🛠️ Quick Start
 
