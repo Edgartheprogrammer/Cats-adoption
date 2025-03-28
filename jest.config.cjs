@@ -6,7 +6,8 @@ module.exports = {
   },
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy',
-    '\\.(jpg|png|svg)$': '<rootDir>/__mocks__/fileMock.js'
+    '\\.(jpg|png|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    '^@stores/(.*)$': '<rootDir>/src/stores/$1',
   },
   testEnvironmentOptions: {
     customExportConditions: [''],
