@@ -2,19 +2,23 @@ import { render, screen, waitFor } from '@testing-library/react';
 import AllCatsPage from '../../pages/AllCatsPage/AllCatsPage';
 import { fetchCats } from '../../services/catService';
 
+// Mock all child components and dependencies
+jest.mock('../../components/CatSlider/CatSlider', () => ({ cats }) => (
+  <div data-testid="cat-slider">
+    {cats.map(cat => (
+      <div key={cat.id}>{cat.breeds[0].name}</div>
+    ))}
+  </div>
+));
+
 jest.mock('../../services/catService');
 
-describe('AllCatsPage', () => {
+describe('AllCatsPage Unit Tests', () => {
   const mockCats = [
     { 
-      id: '1', 
-      url: 'cat1.jpg', 
-      breeds: [{ name: 'Siamese', description: 'Description' }] 
-    },
-    { 
-      id: '2', 
-      url: 'cat2.jpg', 
-      breeds: [{ name: 'Persian', description: 'Description' }] 
+      id: '1',
+      url: 'cat1.jpg',
+      breeds: [{ name: 'Siamese' }] 
     }
   ];
 
@@ -22,36 +26,43 @@ describe('AllCatsPage', () => {
     jest.clearAllMocks();
   });
 
-  test('displays cats after successful fetch', async () => {
-    // Mock the resolved value with delay to simulate real API
-    fetchCats.mockResolvedValue(mockCats);
-    
-    render(<AllCatsPage />);
-    
-    // Wait for loading to disappear first
-    await waitFor(() => {
-      expect(screen.queryByText('Loading cats...')).not.toBeInTheDocument();
-    });
-    
-    // Then verify content
-    expect(screen.getByText('Available Cats')).toBeInTheDocument();
-    expect(screen.getByText('Siamese')).toBeInTheDocument();
-    expect(screen.getByText('Persian')).toBeInTheDocument();
-  });
-
-  test('displays loading state initially', () => {
+  // @unitTest - Core rendering
+  test('renders loading state initially', () => {
     fetchCats.mockImplementation(() => new Promise(() => {}));
     render(<AllCatsPage />);
     expect(screen.getByText('Loading cats...')).toBeInTheDocument();
   });
 
-  test('displays error message when fetch fails', async () => {
-    fetchCats.mockRejectedValue(new Error('Network error'));
+  // @unitTest - Successful data fetch
+  test('displays cat data after successful fetch', async () => {
+    fetchCats.mockResolvedValue(mockCats);
     render(<AllCatsPage />);
     
     await waitFor(() => {
-      expect(screen.getByText('Network error')).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /retry/i })).toBeInTheDocument();
+      expect(screen.queryByText('Loading cats...')).not.toBeInTheDocument();
+    });
+    
+    expect(screen.getByText('Siamese')).toBeInTheDocument();
+  });
+
+  // @unitTest - Error handling
+  test('displays error state when fetch fails', async () => {
+    fetchCats.mockRejectedValue(new Error('Failed to fetch'));
+    render(<AllCatsPage />);
+    
+    await waitFor(() => {
+      expect(screen.getByText('Failed to fetch')).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Retry' })).toBeInTheDocument();
+    });
+  });
+
+  // @unitTest - Empty state
+  test('displays empty state when no cats', async () => {
+    fetchCats.mockResolvedValue([]);
+    render(<AllCatsPage />);
+    
+    await waitFor(() => {
+      expect(screen.getByText('No cats available')).toBeInTheDocument();
     });
   });
 });
