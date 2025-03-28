@@ -26,14 +26,12 @@ describe('AllCatsPage Unit Tests', () => {
     jest.clearAllMocks();
   });
 
-  // @unitTest - Core rendering
   test('renders loading state initially', () => {
     fetchCats.mockImplementation(() => new Promise(() => {}));
     render(<AllCatsPage />);
     expect(screen.getByText('Loading cats...')).toBeInTheDocument();
   });
 
-  // @unitTest - Successful data fetch
   test('displays cat data after successful fetch', async () => {
     fetchCats.mockResolvedValue(mockCats);
     render(<AllCatsPage />);
@@ -45,7 +43,6 @@ describe('AllCatsPage Unit Tests', () => {
     expect(screen.getByText('Siamese')).toBeInTheDocument();
   });
 
-  // @unitTest - Error handling
   test('displays error state when fetch fails', async () => {
     fetchCats.mockRejectedValue(new Error('Failed to fetch'));
     render(<AllCatsPage />);
@@ -56,7 +53,6 @@ describe('AllCatsPage Unit Tests', () => {
     });
   });
 
-  // @unitTest - Empty state
   test('displays empty state when no cats', async () => {
     fetchCats.mockResolvedValue([]);
     render(<AllCatsPage />);
