@@ -4,10 +4,8 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  min-height: 100vh;
   color: var(--adopt-text-color, #67BBBF);
-  font-family: 'Merienda';
+  font-family: var(--font-heading);
   transition: color 0.3s ease;
 }
 
