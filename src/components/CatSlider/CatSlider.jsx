@@ -1,3 +1,4 @@
+// CatSlider.jsx
 import React, { useState, useRef } from 'react';
 import CatCard from '../CatCard/CatCard';
 import SliderNavigation from '../SliderNavigation/SliderNavigation';
