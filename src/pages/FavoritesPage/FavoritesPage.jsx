@@ -17,7 +17,6 @@ const FavoritesPage = () => {
   return (
     <main className={styles.favoritesPage}>
       <h1>Your Favorite Cats</h1>
-      
       {isInitialLoad ? (
         <div className={styles.loading}>Loading favorites...</div>
       ) : favorites.length > 0 ? (
