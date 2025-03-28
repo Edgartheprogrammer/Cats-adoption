@@ -12,7 +12,7 @@
   text-align: center;
   padding: 12px;
   margin-bottom: 20px;
-  background: var(--card-accent);
+  background: var(--contact-card-accent);
   border-radius: 6px;
   color: var(--header-footer-text);
   font-family: var(--font-heading);
