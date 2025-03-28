@@ -4,12 +4,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import ContactForm from '../../components/ContactForm/ContactForm.jsx'; // Исправленный путь
 import { MemoryRouter } from 'react-router-dom';
 
-// Добавляем мок для useThemeStore
-jest.mock('../../stores/themeStore', () => ({
-  __esModule: true,
-  default: () => ({ theme: 'light' })
-}));
-
 // Оставляем моки для react-router-dom
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
