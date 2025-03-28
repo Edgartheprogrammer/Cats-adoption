@@ -1,3 +1,4 @@
+// InfoText.jsx
 import React from 'react';
 import useThemeStore from '../../stores/themeStore.js';
 import styles from './InfoText.module.css';

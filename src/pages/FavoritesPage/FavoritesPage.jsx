@@ -1,4 +1,4 @@
-// src/pages/FavoritesPage.jsx
+// FavoritesPage.jsx
 import { useState } from 'react';
 import useFavoritesStore from '../../stores/favoritesStore';
 import CatSlider from '../../components/CatSlider/CatSlider';

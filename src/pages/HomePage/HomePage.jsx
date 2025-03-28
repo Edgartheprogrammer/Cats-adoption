@@ -1,3 +1,4 @@
+// HomePage.jsx
 import React from 'react';
 import bannerImage from '../../assets/images/home-cat.jpg';
 import kittenIcon from '../../assets/icons/kitten-icon.png';

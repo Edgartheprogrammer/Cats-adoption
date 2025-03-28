@@ -1,4 +1,4 @@
-// src/components/SliderNavigation/SliderNavigation.jsx
+// SliderNavigation.jsx
 import React from 'react';
 import styles from './SliderNavigation.module.css';
 
