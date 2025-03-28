@@ -20,7 +20,7 @@
   --input-text: #333;
   --input-border: #ccc;
   --button-bg:  #fbb6b6;
-  --button-hover: #e4b9b9;
+  --button-hover: #ff5c5c;
   --button-text: white;
   --error-color: #ff4444;
   --success-color: #4CAF50;
@@ -39,7 +39,7 @@
   --card-link:  #e57373;
   --card-button-bg:  #f29b9b;
   --card-button-text: white;
-  --card-button-hover: #f0dede;
+  --card-button-hover: #ff5c5c;
   --favorite-button-bg: #fd766c;
   --favorite-button-hover: #eb5353;
 }
