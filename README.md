@@ -11,6 +11,14 @@ Tired of scrolling through endless cat videos and wishing you could cuddle one i
 - 🏠 **Adopt Now** - Simple form to start the adoption process
 - 🌑 **Dark Mode** - Browse without hurting your eyes. Switch to dark mode!
 - 🧪 **Tests** - Jest tests covering essential units
+  - **Unit Tests**: Jest + React Testing Library
+  - **E2E Tests**: Cypress
+  
+```bash
+# Run Cypress tests
+npm run cy:open  # Interactive mode
+npm run cy:run   # Headless mode
+```
 
 ## 👥 Meet the Team
 
@@ -55,6 +63,7 @@ rm -rf node_modules/.cache
 Cats-adoption/
 │ ├── public/
 │ ├── __mocks__/
+│ ├── cypress/
 │ ├── src/
 │ │ ├── components/
 │ │ ├── pages/
