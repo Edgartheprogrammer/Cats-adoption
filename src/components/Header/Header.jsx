@@ -45,6 +45,7 @@ const Header = () => {
           <button
             onClick={toggleTheme}
             className={styles.themeToggle}
+            data-testid="theme-toggle"
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           >
             <img
@@ -53,7 +54,7 @@ const Header = () => {
               className={styles.navIcon}
             />
           </button>
-          
+
         </div>
       </div>
     </header>

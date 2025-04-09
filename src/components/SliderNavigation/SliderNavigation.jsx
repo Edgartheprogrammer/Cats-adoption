@@ -8,6 +8,7 @@ const SliderNavigation = ({ onPrev, onNext }) => {
       <button 
         onClick={onPrev}
         className={styles.navButton}
+        data-testid="slider-prev"
         aria-label="Previous"
       >
         &lt;
@@ -15,6 +16,7 @@ const SliderNavigation = ({ onPrev, onNext }) => {
       <button 
         onClick={onNext}
         className={styles.navButton}
+        data-testid="slider-next"
         aria-label="Next"
       >
         &gt;
