@@ -1,0 +1,12 @@
+[
+  {
+    "id": "cat-0",
+    "url": "https://cdn2.thecatapi.com/images/1.jpg",
+    "breeds": [
+      {
+        "name": "Fluffy 1",
+        "description": "A very affectionate cat that loves cuddles..."
+      }
+    ]
+  }
+]

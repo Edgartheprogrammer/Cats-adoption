@@ -6,6 +6,7 @@ const useFavoritesStore = create(
   persist(
     (set, get) => ({
       favorites: [],
+      resetFavorites: () => set({ favorites: [] }, true),
       addFavorite: (cat) => {
         if (!cat || !cat.id) return;
         set({
@@ -23,9 +24,19 @@ const useFavoritesStore = create(
     }),
     {
       name: 'cat-favorites',
-      getStorage: () => localStorage,
+      getStorage: () => typeof localStorage !== 'undefined' ? localStorage : {
+        getItem: () => null,
+        setItem: () => {},
+        removeItem: () => {}
+      },
+      serialize: JSON.stringify,
+      deserialize: JSON.parse,
     }
   )
 );
+
+if (typeof window !== 'undefined' && !window.useFavoritesStore) {
+  window.useFavoritesStore = useFavoritesStore;
+}
 
 export default useFavoritesStore;

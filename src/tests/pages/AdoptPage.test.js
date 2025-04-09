@@ -1,10 +1,9 @@
 // AdoptPage.test.js
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import ContactForm from '../../components/ContactForm/ContactForm.jsx'; // Исправленный путь
+import ContactForm from '../../components/ContactForm/ContactForm.jsx';
 import { MemoryRouter } from 'react-router-dom';
 
-// Оставляем моки для react-router-dom
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useLocation: () => ({ state: null }),
@@ -22,7 +21,6 @@ test('does not allow submitting the form with empty fieldsи полями', asyn
 
   fireEvent.click(submitButton);
 
-  // Используем findByText для асинхронного ожидания сообщений об ошибках
   await screen.findByText(/name needs 2\+ letters/i);
   await screen.findByText(/invalid email/i);
   await screen.findByText(/9-digit number required/i);

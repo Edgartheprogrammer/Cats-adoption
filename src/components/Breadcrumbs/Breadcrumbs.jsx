@@ -18,10 +18,10 @@ const Breadcrumbs = () => {
   };
 
   return (
-    <nav className={styles.breadcrumbContainer} aria-label="Breadcrumb navigation" data-theme={theme}>
+    <nav className={styles.breadcrumbContainer} aria-label="Breadcrumb navigation" data-testid="breadcrumb-navigation" data-theme={theme}>
       <ol className={styles.breadcrumbList}>
         <li className={styles.breadcrumbItem}>
-          <Link to="/" className={styles.breadcrumbLink}>Home
+          <Link to="/" className={styles.breadcrumbLink} data-testid="breadcrumb-home">Home
           </Link>
         </li>
         {pathnames.map((name, index) => {
@@ -29,9 +29,9 @@ const Breadcrumbs = () => {
           const isLast = index === pathnames.length - 1;
           return (
             <li key={name} className={styles.breadcrumbItem}>
-              <span className={styles.separator}>›</span>
+              <span className={styles.separator} data-testid="breadcrumb-current">›</span>
               {isLast ? (
-                <span className={styles.currentPage}>{getDisplayName(name)}</span>
+                <span className={styles.currentPage} data-testid="breadcrumb-current">{getDisplayName(name)}</span>
               ) : (
                 <Link to={routeTo} className={styles.breadcrumbLink}>
                   {getDisplayName(name)}
